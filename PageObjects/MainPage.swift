@@ -5,11 +5,11 @@ public class MainPage: BaseTest {
         return text("КИНО")
     }
     
-    lazy var curtainCloseBtn = app.buttons["Close"]
-    lazy var topTabBtnMovie = app.staticTexts["КИНО"]
-    lazy var topTabBtnTheaters = app.staticTexts["ТЕАТРЫ"]
-    lazy var topTabBtnConcerts = app.staticTexts["КОНЦЕРТЫ"]
-    lazy var topTabBtnEvents = app.staticTexts["МЕРОПРИЯТИЯ"]
+    lazy var curtainCloseBtn = button("Close")
+    lazy var topTabBtnMovie = text("КИНО")
+    lazy var topTabBtnTheaters = text("ТЕАТРЫ")
+    lazy var topTabBtnConcerts = text("КОНЦЕРТЫ")
+    lazy var topTabBtnEvents = text("МЕРОПРИЯТИЯ")
     
     @discardableResult
     func viewCurtainCloseBtn(completion: Completion = nil) -> Self {
