@@ -20,7 +20,7 @@ class TopTabsTests: XCTestCase {
     }
     
     func testTopTabs() {
-        MainPage().tapTopTabBtnMovie()
+        MainPage().tapTopTabBtn()
     }
 }
 
