@@ -23,6 +23,16 @@ class TopTabsTests: XCTestCase {
         let main_page = MainPage()
         main_page.viewCurtainCloseBtn()
         main_page.viewTopTabBtn()
+        
+        if #available(iOS 13.0, *) {
+            let metrics: [XCTMetric] = [XCTMemoryMetric(), XCTStorageMetric(), XCTClockMetric()]
+            let measureOptions = XCTMeasureOptions.default
+            measureOptions.iterationCount = 3
+            
+            measure(metrics: metrics, options: measureOptions) {
+            main_page.viewTopTabBtn()
+            }
+        }
     }
 }
 
