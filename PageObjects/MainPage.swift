@@ -2,7 +2,7 @@ import XCTest
 
 public class MainPage: BaseTest {
     override var rootElement: XCUIElement {
-        return app.staticTexts["КИНО"]
+        return text("КИНО")
     }
     
     lazy var curtainCloseBtn = app.buttons["Close"]
@@ -12,13 +12,20 @@ public class MainPage: BaseTest {
     lazy var topTabBtnEvents = app.staticTexts["МЕРОПРИЯТИЯ"]
     
     @discardableResult
-    func tapTopTabBtn(comletion: Completion = nil) -> Self {
-        log("tap the Top Tab Btn Movie")
+    func viewCurtainCloseBtn(completion: Completion = nil) -> Self {
+        log("view Curtain Close Btn")
+        XCTAssertTrue(curtainCloseBtn.isHittable)
+        return self
+    }
+    
+    @discardableResult
+    func viewTopTabBtn(completion: Completion = nil) -> Self {
+        log("tap the Curtain Close Btn and view Top Tabs Btn")
         curtainCloseBtn.tap()
-        XCTAssertEqual(topTabBtnMovie.isHittable, true)
-        XCTAssertEqual(topTabBtnTheaters.isHittable, true)
-        XCTAssertEqual(topTabBtnConcerts.isHittable, true)
-        XCTAssertEqual(topTabBtnEvents.isHittable, true)
+        XCTAssertTrue(topTabBtnMovie.isHittable)
+        XCTAssertTrue(topTabBtnTheaters.isHittable)
+        XCTAssertTrue(topTabBtnConcerts.isHittable)
+        XCTAssertTrue(topTabBtnEvents.isHittable)
         return self
     }
 }

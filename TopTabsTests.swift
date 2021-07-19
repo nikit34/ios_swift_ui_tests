@@ -20,7 +20,9 @@ class TopTabsTests: XCTestCase {
     }
     
     func testTopTabs() {
-        MainPage().tapTopTabBtn()
+        let main_page = MainPage()
+        main_page.viewCurtainCloseBtn()
+        main_page.viewTopTabBtn()
     }
 }
 
